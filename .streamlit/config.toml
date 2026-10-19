@@ -1,0 +1,9 @@
+[server]
+# Photos importées : 10 Mo maximum (suffisant pour une photo de téléphone)
+maxUploadSize = 10
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#6C5CE7"

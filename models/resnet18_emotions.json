@@ -1,0 +1,1 @@
+{"arch": "resnet18", "labels": ["neutral", "happiness", "surprise", "sadness", "anger", "disgust", "fear", "contempt"], "img_size": 112}

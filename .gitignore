@@ -1,0 +1,14 @@
+# Environnements Python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Secrets Streamlit (jamais sur GitHub)
+.streamlit/secrets.toml
+
+# Divers
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
