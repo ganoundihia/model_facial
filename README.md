@@ -2,6 +2,11 @@
 
 🔗 **Démo en ligne : https://detection-emotions.streamlit.app**
 
+![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-ResNet18-EE4C2C?logo=pytorch&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-YuNet-5C3EE8?logo=opencv&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-app-FF4B4B?logo=streamlit&logoColor=white)
+
 Application web qui reconnaît l'émotion exprimée par un visage à partir d'une photo importée
 ou prise avec la webcam.
 
@@ -14,6 +19,17 @@ ou prise avec la webcam.
 - Correction automatique de l'orientation des photos de téléphone
 
 ## Comment ça marche
+
+```mermaid
+flowchart LR
+    A[Photo importée<br/>ou webcam] --> B[Détection des visages<br/>YuNet · OpenCV]
+    B --> C[Alignement sur les yeux<br/>recadrage 112×112]
+    C --> D[ResNet18<br/>FER+ puis affiné]
+    C --> E[Visage en miroir]
+    E --> D
+    D --> F[Moyenne des 2 prédictions]
+    F --> G[8 émotions<br/>+ photo annotée]
+```
 
 1. **Détection des visages** : le détecteur YuNet (OpenCV) repère chaque visage et ses points clés
    (yeux, nez, bouche).
